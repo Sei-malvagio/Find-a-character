@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <ctype.h>
+
 #define WHITE "\033[0;37m"
 #define GREEN "\033[0;32m"
 #define BLUE "\033[0;36m"
 
-void main() {
+int main() {
     char *name_items = NULL;
     name_items = (char *) malloc(100 * sizeof(name_items));
     puts(BLUE"Waiting...\n");
@@ -23,7 +25,7 @@ void main() {
 
     int find_a_chr = 0;
     while(1) {
-    
+
         printf("\n\nFind a \033[0;96mcharacter\033[0;97m in length: ");
         scanf("%d", &find_a_chr);
         usleep(800000);
@@ -39,6 +41,7 @@ void main() {
                 scanf("%d", &find_a_chr);
             }
         }
+        getchar();
     }
-    getchar();
+    return 0;
 }
